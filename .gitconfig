@@ -14,8 +14,8 @@
 	changed = green
 	untracked = cyan
 [user]
-	name = Joël Stemmer
-	email = stemmertech@gmail.com
+	name = Stephan Emmerich
+	email = stephan.emmerich@nedap.com 
 [alias]
 	b = bisect
 	br = branch
@@ -38,11 +38,21 @@
 [core]
 	excludesfile = "~/.gitexcludes"
 	editor = vim
+[diff]
+	tool = kdiff3
 [merge]
-	tool = vimdiff3
-[mergetool "gvimdiff3"]
-	cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+	tool = kdiff3
+[mergetool "kdiff3"]
+	path = "/usr/bin/X11/kdiff3"
+	keepBackup = false
+	trustExitCode = false
+[difftool "kdiff3"]
+	path = "/usr/bin/X11/kdiff3"
+	keepBackup = false
+	trustExitCode = false
 [push]
 	default = current
 [web]
 	browser = google-chrome
+[mergetool]
+	keepBackup = false
